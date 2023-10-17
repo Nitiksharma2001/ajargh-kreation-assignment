@@ -17,7 +17,7 @@ auth_routes.post('/signup', async (req, res) => {
       const newPassword = await bcrypt.hash(password, 6)
       const newUser = new userModel({ name, email, password: newPassword })
       await newUser.save()
-      res.json({ message: 'user created', user: newUser })
+      res.json({ message: 'user created'})
     } else {
       res.json({ message: 'user already existed' })
     }

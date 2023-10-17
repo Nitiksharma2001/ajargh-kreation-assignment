@@ -17,7 +17,7 @@ const authenticate = (req, res, next) => {
 }
 // get all todos
 user_todo_routes.get('/todos', authenticate, async (req, res) => {
-  const todos = await todoModel.find({ owner: req.user._id }).exec()
+  const todos = await todoModel.find({ owner: req.user._id }).populate().exec()
   res.json(todos)
 })
 
@@ -34,7 +34,7 @@ user_todo_routes.post('/addtodo', authenticate, async (req, res) => {
     const user = await userModel.findOne({ _id }).select('-password')
     user.todos.push(newTodo._id)
     await user.save()
-    res.json({ message: 'todo created', todo: newTodo, user })
+    res.json({ message: 'todo created', todo: newTodo})
   } catch (err) {
     res.json({ message: err })
   }
