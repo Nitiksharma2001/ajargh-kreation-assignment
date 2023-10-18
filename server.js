@@ -5,7 +5,7 @@ import cors from 'cors'
 import { auth_routes } from './routes/auth_routes.js'
 import { user_todo_routes } from './routes/user_todo_routes.js'
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000
 const mongoDbAtlas = process.env.MONGO_URI
 
 const app = express()
