@@ -2,10 +2,9 @@
   "name": "ajargh-kreation",
   "version": "1.0.0",
   "description": "backend of todo-app with authentication and authorization",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "author": "",
