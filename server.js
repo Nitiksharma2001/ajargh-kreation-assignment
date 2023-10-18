@@ -16,7 +16,6 @@ app.use('/user/', user_todo_routes)
 
 app.listen(PORT, () => {
   mongoose.connect(mongoDbAtlas).then(()=> {
-
       console.log('listening port', PORT)
   })
 })
